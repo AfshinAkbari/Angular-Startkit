@@ -13,7 +13,7 @@ import { AngularProjectModule } from 'projects/angular-project/src/public-api';
     HomeComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    BrowserModule,
     HttpClientModule,
     AngularProjectModule,
     RouterModule.forRoot([
