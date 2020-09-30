@@ -1,0 +1,27 @@
+<div class="col-12 p-4">
+  <h2 class="h-color">test get service on jsonPlaceHolder</h2>
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+      <thead>
+        <th>UserId</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Tools</th>
+      </thead>
+      <tbody>
+          <tr *ngFor="let item of posts">
+            <td >{{item.userId}}</td>
+            <td >{{item.id}}</td>
+            <td >{{item.title}}</td>
+            <td >{{item.body}}</td>
+            <td class="icon-td">
+                <i class="fas fa-plus-square" (click)="add()"></i> |
+                <i class="fas fa-edit" (click)="edit()"></i> |
+                <i class="fas fa-trash-alt" (click)="delete()"></i>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
