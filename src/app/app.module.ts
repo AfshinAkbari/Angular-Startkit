@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -16,7 +15,6 @@ import { AngularProjectModule } from 'projects/angular-project/src/public-api';
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
-    FormsModule,
     AngularProjectModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' }
