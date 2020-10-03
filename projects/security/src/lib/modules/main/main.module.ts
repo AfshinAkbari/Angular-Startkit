@@ -8,7 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { CoreModule } from '../../shared/core.module';
 import { appConfig } from '../../models/config';
 import { MainComponent } from './main.component';
-import { LayoutModule } from '../../modules/layout/layout.module';
+import { LayoutModule } from '../layout/layout.module';
 
 const appRoutes: Routes = [
     // todo: loadChildren of main...
