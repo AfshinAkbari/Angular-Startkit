@@ -35,6 +35,9 @@
       "security/*": [
         "dist/security/*"
       ],
+      "core": [
+        "dist/core/core",
+        "dist/core"
       ]
     }
   }
