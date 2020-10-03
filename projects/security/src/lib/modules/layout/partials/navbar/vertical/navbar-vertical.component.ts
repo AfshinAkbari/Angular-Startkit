@@ -2,10 +2,10 @@ import { Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@ang
 import { NavigationEnd, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { filter, take, takeUntil } from 'rxjs/operators';
-import { AppConfigService } from 'projects/security/src/lib/shared/config.service';
-import { AppNavigationService } from 'projects/security/src/lib/modules/layout/partials/navigation/navigation.service';
-import { AppPerfectScrollbarDirective } from 'projects/security/src/lib/shared/app-perfect-scrollbar.directive';
-import { AppSidebarService } from 'projects/security/src/lib/modules/layout/partials/sidebar/sidebar.service';
+import { AppConfigService } from '../../../../../shared/config.service';
+import { AppNavigationService } from '../../navigation/navigation.service';
+import { AppPerfectScrollbarDirective } from '../../../../../shared/app-perfect-scrollbar.directive';
+import { AppSidebarService } from '../../sidebar/sidebar.service';
 
 @Component({
     selector: 'navbar-vertical',

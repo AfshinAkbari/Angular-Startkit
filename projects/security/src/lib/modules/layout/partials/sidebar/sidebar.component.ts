@@ -18,7 +18,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { AppSidebarService } from './sidebar.service';
 import { AppMatchMediaService } from './match-media.service';
-import { AppConfigService } from 'projects/security/src/lib/shared/config.service';
+import { AppConfigService } from '../../../../shared/config.service';
 
 @Component({
     selector: 'app-sidebar',

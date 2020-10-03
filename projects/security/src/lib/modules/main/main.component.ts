@@ -3,9 +3,9 @@ import { DOCUMENT } from '@angular/common';
 import { Platform } from '@angular/cdk/platform';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { AppConfigService } from 'projects/security/src/lib/shared/config.service';
-import { AppNavigationService } from 'projects/security/src/lib/modules/layout/partials/navigation/navigation.service';
-import { navigation } from 'projects/security/src/lib/models/navigation';
+import { AppConfigService } from '../../shared/config.service';
+import { AppNavigationService } from '../layout/partials/navigation/navigation.service';
+import { navigation } from '../../models/navigation';
 
 @Component({
     selector: 'main-layout',

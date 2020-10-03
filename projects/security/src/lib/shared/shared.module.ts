@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { AppPerfectScrollbarDirective } from 'projects/security/src/lib/shared/app-perfect-scrollbar.directive';
+import { AppPerfectScrollbarDirective } from './app-perfect-scrollbar.directive';
 
 @NgModule({
     declarations: [

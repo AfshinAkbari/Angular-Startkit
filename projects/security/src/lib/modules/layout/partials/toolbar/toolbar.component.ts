@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { AppConfigService } from 'projects/security/src/lib/shared/config.service';
-import { AppSidebarService } from 'projects/security/src/lib/modules/layout/partials/sidebar/sidebar.service';
+import { AppConfigService } from '../../../../shared/config.service';
+import { AppSidebarService } from '../sidebar/sidebar.service';
 
 @Component({
     selector: 'toolbar',

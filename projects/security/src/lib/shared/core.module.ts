@@ -1,5 +1,5 @@
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
-import { APP_CONFIG } from 'projects/security/src/lib/shared/config.service';
+import { APP_CONFIG } from './config.service';
 
 @NgModule()
 export class CoreModule {

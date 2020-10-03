@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { AppConfigService } from 'projects/security/src/lib/shared/config.service';
+import { AppConfigService } from '../../../shared/config.service';
 
 @Component({
     selector: 'vertical-layout-1',

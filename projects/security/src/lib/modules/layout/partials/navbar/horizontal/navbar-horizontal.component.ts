@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
-import { AppConfigService } from 'projects/security/src/lib/shared/config.service';
-import { AppNavigationService } from 'projects/security/src/lib/modules/layout/partials/navigation/navigation.service';
+import { AppConfigService } from '../../../../../shared/config.service';
+import { AppNavigationService } from '../../navigation/navigation.service';
 
 @Component({
     selector: 'navbar-horizontal',

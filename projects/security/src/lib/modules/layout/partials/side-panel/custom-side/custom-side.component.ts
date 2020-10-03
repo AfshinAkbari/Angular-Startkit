@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { AppSidebarService } from 'projects/security/src/lib/modules/layout/partials/sidebar/sidebar.service';
+import { AppSidebarService } from '../../sidebar/sidebar.service';
 
 @Component({
     selector: 'custom-side',

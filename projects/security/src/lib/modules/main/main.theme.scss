@@ -61,8 +61,8 @@ $typography: mat-typography-config(
         $input: mat-typography-level(16px, 1.125, 400)
 );
 
-@import "projects/security/src/lib/modules/layout/partials/side-panel/custom-side/custom-side.theme";
-@import "projects/security/src/lib/modules/layout/partials/toolbar/toolbar.theme";
+@import "../../modules/layout/partials/side-panel/custom-side/custom-side.theme";
+@import "../../modules/layout/partials/toolbar/toolbar.theme";
 
 //todo: import theme root file from other library (import index address)...
 

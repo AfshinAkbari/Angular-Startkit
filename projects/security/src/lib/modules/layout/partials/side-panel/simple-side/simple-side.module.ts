@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { SimpleSideComponent } from 'projects/security/src/lib/modules/layout/partials/side-panel/simple-side/simple-side.component';
+import { SimpleSideComponent } from './simple-side.component';
 
 @NgModule({
     declarations: [

@@ -4,8 +4,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { AppSharedModule } from 'projects/security/src/lib/shared/shared.module';
-import { ToolbarComponent } from 'projects/security/src/lib/modules/layout/partials/toolbar/toolbar.component';
+import { AppSharedModule } from '../../../../shared/shared.module';
+import { ToolbarComponent } from './toolbar.component';
 
 @NgModule({
     declarations: [

@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, V
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { AppNavigationService } from 'projects/security/src/lib/modules/layout/partials/navigation/navigation.service';
+import { AppNavigationService } from './navigation.service';
 
 @Component({
     selector: 'app-navigation',
