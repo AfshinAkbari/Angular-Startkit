@@ -1,0 +1,9 @@
+@import '~perfect-scrollbar/css/perfect-scrollbar';
+@import "app";
+@import "theme";
+@include mat-core();
+@import "partials/helpers";
+@import "partials/colors";
+@import "partials/material";
+@import "partials/navigation";
+@import "partials/perfect-scrollbar";

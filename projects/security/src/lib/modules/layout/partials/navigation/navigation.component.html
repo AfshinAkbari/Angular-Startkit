@@ -1,0 +1,23 @@
+<div class="nav" [ngClass]="{'horizontal':layout === 'horizontal', 'vertical':layout === 'vertical'}">
+
+    <ng-container *ngIf="layout === 'vertical'">
+
+        <ng-container *ngFor="let item of navigation">
+
+            <app-nav-vertical-item [item]="item"></app-nav-vertical-item>
+
+        </ng-container>
+
+    </ng-container>
+
+    <ng-container *ngIf="layout === 'horizontal'">
+
+        <ng-container *ngFor="let item of navigation">
+
+            <app-nav-horizontal-item [item]="item"></app-nav-horizontal-item>
+
+        </ng-container>
+
+    </ng-container>
+
+</div>

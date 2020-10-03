@@ -1,0 +1,13 @@
+:host {
+
+    .folded:not(.unfolded) & {
+
+        .nav-link {
+
+            > .nav-link-title {
+                opacity: 0;
+                transition: opacity 200ms ease;
+            }
+        }
+    }
+}

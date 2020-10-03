@@ -1,0 +1,236 @@
+@mixin colors-theme($theme) {
+
+    $is-dark: map-get($theme, is-dark);
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+
+    & {
+        color: map-get($foreground, text);
+        @if ($is-dark) {
+            background: map-get($background, background);
+        } @else {
+            background: #F5F5F5;
+        }
+    }
+
+    .secondary-text {
+        color: map-get($foreground, secondary-text);
+    }
+
+    .icon,
+    i {
+        color: map-get($foreground, icon);
+    }
+
+    .hint-text {
+        color: map-get($foreground, hint-text);
+    }
+
+    .divider {
+        color: map-get($foreground, divider);
+    }
+}
+
+$matPalettes: (
+        'red': $mat-red,
+        'pink': $mat-pink,
+        'purple': $mat-purple,
+        'deep-purple': $mat-deep-purple,
+        'indigo': $mat-indigo,
+        'blue': $mat-blue,
+        'light-blue': $mat-light-blue,
+        'cyan': $mat-cyan,
+        'teal': $mat-teal,
+        'green': $mat-green,
+        'light-green': $mat-light-green,
+        'lime': $mat-lime,
+        'yellow': $mat-yellow,
+        'amber': $mat-amber,
+        'orange': $mat-orange,
+        'deep-orange': $mat-deep-orange,
+        'brown': $mat-brown,
+        'grey': $mat-grey,
+        'blue-grey': $mat-blue-grey
+);
+
+$matHues: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A700;
+
+@mixin generate-text-color-levels($classes, $contrast) {
+
+    @if ($contrast == 'dark') {
+
+        #{$classes} {
+            i,
+            .icon {
+                color: rgba(0, 0, 0, 0.54);
+            }
+
+            &.secondary-text,
+            .secondary-text {
+                color: rgba(0, 0, 0, 0.54) !important;
+            }
+
+            &.hint-text,
+            .hint-text {
+                color: rgba(0, 0, 0, 0.38) !important;
+            }
+
+            &.divider,
+            .divider {
+                color: rgba(0, 0, 0, 0.12) !important;
+            }
+
+            .mat-ripple-element {
+                background: rgba(0, 0, 0, 0.1);
+            }
+        }
+
+    } @else {
+
+        #{$classes} {
+
+            i,
+            .icon {
+                color: rgba(255, 255, 255, 1);
+            }
+
+            &.secondary-text,
+            .secondary-text {
+                color: rgba(255, 255, 255, 0.70) !important;
+            }
+
+            &.hint-text,
+            .hint-text {
+                color: rgba(255, 255, 255, 0.50) !important;
+            }
+
+            &.divider,
+            .divider {
+                color: rgba(255, 255, 255, 0.12) !important;
+            }
+
+            .mat-ripple-element {
+                background: rgba(255, 255, 255, 0.1);
+            }
+        }
+    }
+}
+
+@mixin generate-material-element-colors($classes, $contrast) {
+
+    $appForeground: (
+            base: white,
+            text: white,
+            hint-text: rgba(white, 0.5),
+            divider: rgba(white, 0.12),
+    );
+
+    @if ($contrast == 'dark') {
+
+        $appForeground: (
+                base: black,
+                hint-text: rgba(black, 0.38),
+                divider: rgba(black, 0.12),
+        );
+    }
+}
+
+@mixin generate-color-classes($colorName, $color, $contrastColor, $hue) {
+
+    .#{$colorName}#{$hue}-bg {
+        background-color: $color !important;
+    }
+
+    .#{$colorName}#{$hue} {
+        background-color: $color !important;
+        color: $contrastColor !important;
+
+        &[disabled] {
+            background-color: rgba($color, .12) !important;
+            color: rgba($contrastColor, .26) !important;
+        }
+    }
+
+    .#{$colorName}#{$hue}-fg {
+        color: $color !important;
+    }
+
+    .#{$colorName}#{$hue}-border {
+        border-color: $color !important;
+    }
+
+    .#{$colorName}#{$hue}-border-top {
+        border-top-color: $color !important;
+    }
+
+    .#{$colorName}#{$hue}-border-right {
+        border-right-color: $color !important;
+    }
+
+    .#{$colorName}#{$hue}-border-bottom {
+        border-bottom-color: $color !important;
+    }
+
+    .#{$colorName}#{$hue}-border-left {
+        border-left-color: $color !important;
+    }
+}
+
+@mixin app-color-classes($palettes) {
+
+    $light-contrasting-classes: ();
+    $dark-contrasting-classes: ();
+
+    @each $paletteName, $palette in $palettes {
+
+        $contrasts: map-get($palette, 'contrast');
+
+        @each $hue in $matHues {
+
+            $color: map-get($palette, $hue);
+            $contrast: map-get($contrasts, $hue);
+
+            @if ($color != null and $contrast != null) {
+
+                @include generate-color-classes($paletteName, $color, $contrast, '-#{$hue}');
+
+                @if (rgba(black, 1) == rgba($contrast, 1)) {
+                    $dark-contrasting-classes: append($dark-contrasting-classes, unquote('.#{$paletteName}-#{$hue}'), 'comma');
+                } @else {
+                    $light-contrasting-classes: append($light-contrasting-classes, unquote('.#{$paletteName}-#{$hue}'), 'comma');
+                }
+
+                @if ($hue == 500 and $paletteName != 'primary' and $paletteName != 'accent' and $paletteName != 'warn') {
+
+                    @include generate-color-classes($paletteName, $color, $contrast, '');
+                    @if (rgba(black, 1) == rgba($contrast, 1)) {
+                        $dark-contrasting-classes: append($dark-contrasting-classes, unquote('.#{$paletteName}'), 'comma');
+                    } @else {
+                        $light-contrasting-classes: append($light-contrasting-classes, unquote('.#{$paletteName}'), 'comma');
+                    }
+                }
+            }
+        }
+
+        @if ($paletteName == 'primary' or $paletteName == 'accent' or $paletteName == 'warn') {
+
+            $color: map-get($palette, 'default');
+            $contrast: map-get($palette, 'default-contrast');
+
+            @include generate-color-classes($paletteName, $color, $contrast, '');
+
+            @if (rgba(black, 1) == rgba($contrast, 1)) {
+                $dark-contrasting-classes: append($dark-contrasting-classes, unquote('.#{$paletteName}'), 'comma');
+            } @else {
+                $light-contrasting-classes: append($light-contrasting-classes, unquote('.#{$paletteName}'), 'comma');
+            }
+        }
+    }
+
+    @include generate-text-color-levels($dark-contrasting-classes, 'dark');
+    @include generate-text-color-levels($light-contrasting-classes, 'light');
+    @include generate-material-element-colors($dark-contrasting-classes, 'dark');
+    @include generate-material-element-colors($light-contrasting-classes, 'light');
+}
+
+@include app-color-classes($matPalettes);

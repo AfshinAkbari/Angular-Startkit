@@ -8,6 +8,10 @@
 
 # dependencies
 /node_modules
+/projects/security/node_modules
+
+package-lock.json
+/projects/security/package-lock.json
 
 # IDEs and editors
 /.idea

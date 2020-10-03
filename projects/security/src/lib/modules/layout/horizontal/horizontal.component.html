@@ -1,0 +1,89 @@
+<ng-container *ngIf="!appConfig.layout.customSide.hidden && appConfig.layout.customSide.position === 'left'">
+
+    <app-sidebar name="customSide" position="left" class="custom-side left-custom-side"
+                 [folded]="true" [foldedWidth]="70" [foldedAutoTriggerOnHover]="false"
+                 lockedOpen="gt-md">
+        <custom-side></custom-side>
+    </app-sidebar>
+
+</ng-container>
+
+<div id="main">
+
+    <ng-container *ngIf="appConfig.layout.toolbar.position === 'above'">
+        <ng-container *ngTemplateOutlet="toolbar"></ng-container>
+    </ng-container>
+
+    <ng-container *ngTemplateOutlet="topNavbar"></ng-container>
+
+    <ng-container *ngIf="appConfig.layout.toolbar.position === 'below'">
+        <ng-container *ngTemplateOutlet="toolbar"></ng-container>
+    </ng-container>
+
+    <div id="container-1" class="container">
+
+        <ng-container *ngTemplateOutlet="rightNavbar"></ng-container>
+
+        <div id="container-2" class="container">
+
+            <div id="container-3" class="container" appPerfectScrollbar
+                 [appPerfectScrollbarOptions]="{suppressScrollX: true, updateOnRouteChange : true}">
+
+                <content></content>
+
+                <ng-container *ngIf="appConfig.layout.footer.position === 'above-static'">
+                    <ng-container *ngTemplateOutlet="footer"></ng-container>
+                </ng-container>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <ng-container *ngIf="appConfig.layout.footer.position === 'above-fixed'">
+        <ng-container *ngTemplateOutlet="footer"></ng-container>
+    </ng-container>
+
+</div>
+
+<ng-container *ngIf="!appConfig.layout.customSide.hidden && appConfig.layout.customSide.position === 'right'">
+
+    <app-sidebar name="customSide" position="right" class="custom-side right-custom-side"
+                 [folded]="true" [foldedWidth]="70" [foldedAutoTriggerOnHover]="false"
+                 lockedOpen="gt-md">
+        <custom-side></custom-side>
+    </app-sidebar>
+
+</ng-container>
+
+<app-sidebar name="simpleSide" *ngIf="!appConfig.layout.simpleSide.hidden" [position]="appConfig.layout.simpleSide.position" class="simple-side">
+    <simple-side></simple-side>
+</app-sidebar>
+
+<ng-template #toolbar>
+    <toolbar *ngIf="!appConfig.layout.toolbar.hidden"
+             [ngClass]="appConfig.layout.toolbar.customBackgroundColor === true ? appConfig.layout.toolbar.position + ' ' + appConfig.layout.toolbar.background : appConfig.layout.toolbar.position">
+    </toolbar>
+</ng-template>
+
+<ng-template #footer>
+    <footer *ngIf="!appConfig.layout.footer.hidden"
+            [ngClass]="appConfig.layout.footer.customBackgroundColor === true ? appConfig.layout.footer.position + ' ' + appConfig.layout.footer.background : appConfig.layout.footer.position">
+    </footer>
+</ng-template>
+
+<ng-template #topNavbar>
+    <navbar variant="horizontal-style-1"
+            class="top-navbar" fxHide fxShow.gt-md
+            *ngIf="!appConfig.layout.navbar.hidden">
+    </navbar>
+</ng-template>
+
+<ng-template #rightNavbar>
+    <app-sidebar name="navbar" position="right" class="navbar-app-sidebar"
+                 [folded]="appConfig.layout.navbar.folded"
+                 *ngIf="!appConfig.layout.navbar.hidden">
+        <navbar [variant]="appConfig.layout.navbar.variant" class="right-navbar"></navbar>
+    </app-sidebar>
+</ng-template>

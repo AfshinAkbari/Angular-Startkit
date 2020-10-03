@@ -5,7 +5,8 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { AngularProjectModule } from 'projects/angular-project/src/public-api';
+// import { AngularProjectModule } from 'projects/angular-project/src/public-api';
+import { SecurityModule } from 'projects/security/src/public-api';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AngularProjectModule } from 'projects/angular-project/src/public-api';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AngularProjectModule,
+    // AngularProjectModule,
+    SecurityModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' }
     ])

@@ -1,0 +1,10 @@
+@import "projects/security/src/lib/modules/layout/partials/sidebar/sidebar.theme";
+
+@mixin app-core-theme($theme) {
+
+    @include colors-theme($theme);
+    @include material-theme($theme);
+    @include app-sidebar-theme($theme);
+
+}
+

@@ -1,0 +1,23 @@
+<div class="header mat-elevation-z4 accent" fxLayout="row" fxLayoutAlign="space-between center">
+
+    <div class="title mr-20" fxLayout="row" fxLayoutAlign="start center"
+         (click)="unfoldSidebarTemporarily()">
+        <mat-icon class="s-32 app-white-fg">info</mat-icon>
+        <h5 class="mr-12">سایدبار کاستوم - همراه با تم و lock</h5>
+    </div>
+
+    <button mat-icon-button class="toggle-sidebar-folded mr-8" (click)="foldSidebarTemporarily();"
+            fxHide fxShow.gt-md>
+        <mat-icon class="secondary-text s-20">close</mat-icon>
+    </button>
+
+    <button mat-icon-button class="toggle-sidebar-open mr-8" (click)="toggleSidebarOpen();"
+            fxHide.gt-md>
+        <mat-icon class="secondary-text">close</mat-icon>
+    </button>
+
+</div>
+
+<div class="content">
+
+</div>
