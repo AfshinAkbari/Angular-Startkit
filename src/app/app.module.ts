@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 // import { AngularProjectModule } from 'projects/angular-project/src/public-api';
-import { SecurityModule } from 'projects/security/src/public-api';
+import { SecurityModule } from 'security';
 
 @NgModule({
   declarations: [
