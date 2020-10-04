@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CoreService } from './core.service';
+import { PdnCoreService } from './pdn-core.service';
 
-describe('CoreService', () => {
-  let service: CoreService;
+describe('PdnCoreService', () => {
+  let service: PdnCoreService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(CoreService);
+    service = TestBed.inject(PdnCoreService);
   });
 
   it('should be created', () => {

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CoreComponent } from './core.component';
+import { PdnCoreComponent } from './pdn-core.component';
 
-describe('CoreComponent', () => {
-  let component: CoreComponent;
-  let fixture: ComponentFixture<CoreComponent>;
+describe('PdnCoreComponent', () => {
+  let component: PdnCoreComponent;
+  let fixture: ComponentFixture<PdnCoreComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CoreComponent ]
+      declarations: [ PdnCoreComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CoreComponent);
+    fixture = TestBed.createComponent(PdnCoreComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
