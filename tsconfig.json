@@ -18,10 +18,10 @@
     ],
     "paths": {
       "angular-project": [
-        "dist/angular-project"
+        "projects/angular-project/src/public-api"
       ],
       "angular-project/*": [
-        "dist/angular-project/*"
+        "projects/angular-project/src/*"
       ],
       "core-js/es7/reflect": [
         "node_modules/core-js/proposals/reflect-metadata"
@@ -29,15 +29,18 @@
       "core-js/es6/*": [
         "node_modules/core-js/es/*"
       ],
-      "security": [
-        "dist/security"
+      "pdn-security": [
+        "projects/pdn-security/src/public-api"
       ],
-      "security/*": [
-        "dist/security/*"
+      "pdn-security/*": [
+        "projects/pdn-security/src/*"
       ],
-      "core": [
-        "dist/core/core",
-        "dist/core"
+      "pdn-core": [
+        "projects/pdn-core/src/public-api"
+
+      ],
+      "pdn-core/*": [
+        "projects/pdn-core/src/*"
       ]
     }
   }

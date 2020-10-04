@@ -2,8 +2,8 @@
   "name": "Angular.Project.Template.Beta1",
   "version": "0.0.0",
   "author": {
-    "name": "Masoud Bimar",
-    "email": "masoudbimar@gmail.com"
+    "name": "",
+    "email": ""
   },
   "scripts": {
     "ng": "ng",
