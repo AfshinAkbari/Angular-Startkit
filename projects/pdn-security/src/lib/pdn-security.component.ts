@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'lib-security',
+    selector: 'pdn-security',
     template: `
         <p>
             security works!
@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
     `,
     styles: []
 })
-export class SecurityComponent implements OnInit {
+export class PdnSecurityComponent implements OnInit {
 
     constructor() {}
 

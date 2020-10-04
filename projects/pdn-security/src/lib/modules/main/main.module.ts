@@ -9,7 +9,7 @@ import { CoreModule } from '../../shared/core.module';
 import { appConfig } from '../../models/config';
 import { MainComponent } from './main.component';
 import { LayoutModule } from '../layout/layout.module';
-import { CoreComponent } from 'pdn-core';
+//import { PdnCoreComponent } from 'pdn-core';
 
 const appRoutes: Routes = [
     // todo: loadChildren of main...
@@ -18,7 +18,7 @@ const appRoutes: Routes = [
 @NgModule({
     declarations: [
         MainComponent,
-        CoreComponent
+       // PdnCoreComponent
     ],
     imports: [
         BrowserModule,
@@ -32,10 +32,7 @@ const appRoutes: Routes = [
 
     ],
     exports: [MainComponent],
-    // todo: need to botstrap!?
-    // bootstrap: [
-    //     MainComponent
-    // ]
+
 })
 export class MainModule {
 }

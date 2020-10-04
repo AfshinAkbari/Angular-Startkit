@@ -2,9 +2,9 @@
  * Public API Surface of security
  */
 
-export * from './lib/security.service';
-export * from './lib/security.component';
-export * from './lib/security.module';
+export * from './lib/pdn-security.service';
+export * from './lib/pdn-security.component';
+export * from './lib/pdn-security.module';
 
 // todo: error at build command!
 export * from './lib/modules/main/main.module';

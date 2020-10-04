@@ -179,38 +179,38 @@
         }
       }
     },
-    "security": {
+    "pdn-security": {
       "projectType": "library",
-      "root": "projects/security",
-      "sourceRoot": "projects/security/src",
+      "root": "projects/pdn-security",
+      "sourceRoot": "projects/pdn-security/src",
       "prefix": "pdn",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/security/tsconfig.lib.json",
-            "project": "projects/security/ng-package.json"
+            "tsConfig": "projects/pdn-security/tsconfig.lib.json",
+            "project": "projects/pdn-security/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/security/tsconfig.lib.prod.json"
+              "tsConfig": "projects/pdn-security/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/security/src/test.ts",
-            "tsConfig": "projects/security/tsconfig.spec.json",
-            "karmaConfig": "projects/security/karma.conf.js"
+            "main": "projects/pdn-security/src/test.ts",
+            "tsConfig": "projects/pdn-security/tsconfig.spec.json",
+            "karmaConfig": "projects/pdn-security/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/security/tsconfig.lib.json",
-              "projects/security/tsconfig.spec.json"
+              "projects/pdn-security/tsconfig.lib.json",
+              "projects/pdn-security/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SecurityService } from './security.service';
+import { PdnSecurityService } from './pdn-security.service';
 
-describe('SecurityService', () => {
-  let service: SecurityService;
+describe('PdnSecurityService', () => {
+  let service: PdnSecurityService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(SecurityService);
+    service = TestBed.inject(PdnSecurityService);
   });
 
   it('should be created', () => {

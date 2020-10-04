@@ -29,11 +29,11 @@
       "core-js/es6/*": [
         "node_modules/core-js/es/*"
       ],
-      "security": [
         "dist/security"
+      "pdn-security": [
       ],
-      "security/*": [
         "dist/security/*"
+      "pdn-security/*": [
       ],
       "pdn-core": [
         "dist/core/core",

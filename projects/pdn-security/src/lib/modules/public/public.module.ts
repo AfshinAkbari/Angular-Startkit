@@ -7,7 +7,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { CoreModule } from '../../shared/core.module';
 import { appConfig } from '../../models/config';
-
 import { PublicComponent } from './../public/public.component';
 
 
@@ -27,10 +26,7 @@ import { PublicComponent } from './../public/public.component';
         CoreModule.forRoot(appConfig),
     ],
     exports: [],
-    // todo: need to botstrap!?
-    // bootstrap: [
-    //     MainComponent
-    // ]
+  
 })
 export class MainModule {
 }
