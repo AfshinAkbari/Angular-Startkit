@@ -3,11 +3,11 @@ import { Routes } from '@angular/router';
 export const appRoutes: Routes = [
     {
         path: 'public',
-        loadChildren: () => import('../../projects/pdn-security/src/lib/modules/public/public.module').then(m => m.PublicModule)
+        loadChildren: () => import('pdn-security/lib/modules/public/public.module').then(m => m.PublicModule)
     },
     {
         path: 'main',
-        loadChildren: () => import('../../projects/pdn-security/src/lib/modules/main/main.module').then(m => m.MainModule)
+        loadChildren: () => import('pdn-security/lib/modules/main/main.module').then(m => m.MainModule)
     },
     { path: '', redirectTo: 'public', pathMatch: 'full' },
     { path: '**', redirectTo: 'public' }

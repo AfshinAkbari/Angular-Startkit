@@ -19,10 +19,10 @@
     ],
     "paths": {
       "angular-project": [
-        "projects/angular-project"
+        "projects/angular-project/src/public-api"
       ],
       "angular-project/*": [
-        "projects/angular-project/*"
+        "projects/angular-project/src/*"
       ],
       "core-js/es7/reflect": [
         "node_modules/core-js/proposals/reflect-metadata"

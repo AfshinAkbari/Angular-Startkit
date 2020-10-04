@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Angular.Project.Template.Beta1": {
+    "AngularProjectTemplateBeta1": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -52,18 +52,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Angular.Project.Template.Beta1:build"
+            "browserTarget": "AngularProjectTemplateBeta1:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Angular.Project.Template.Beta1:build:production"
+              "browserTarget": "AngularProjectTemplateBeta1:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Angular.Project.Template.Beta1:build"
+            "browserTarget": "AngularProjectTemplateBeta1:build"
           }
         },
         "test": {
@@ -122,7 +122,7 @@
         }
       }
     },
-    "Angular.Project.Template.Beta1-e2e": {
+    "AngularProjectTemplateBeta1-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -260,7 +260,7 @@
       }
     }
   },
-  "defaultProject": "Angular.Project.Template.Beta1",
+  "defaultProject": "AngularProjectTemplateBeta1",
   "cli": {
     "analytics": "69f15593-670a-46ea-8009-b6715d015b99"
   }
