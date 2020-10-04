@@ -20,7 +20,7 @@ export class MainComponent implements OnInit, OnDestroy {
 
     constructor(
         @Inject(DOCUMENT) private document: any,
-        private appConfigService: AppConfigService,
+        // private appConfigService: AppConfigService,
         private appNavigationService: AppNavigationService,
         private platform: Platform
     ) {
@@ -34,28 +34,28 @@ export class MainComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
-        this.appConfigService.config
-            .pipe(takeUntil(this.unsubscribeAll))
-            .subscribe((config) => {
-
-                this.appConfig = config;
-
-                if (this.appConfig.layout.width === 'boxed') {
-                    this.document.body.classList.add('boxed');
-                } else {
-                    this.document.body.classList.remove('boxed');
-                }
-
-                for (let i = 0; i < this.document.body.classList.length; i++) {
-                    const className = this.document.body.classList[i];
-
-                    if (className.startsWith('theme-')) {
-                        this.document.body.classList.remove(className);
-                    }
-                }
-
-                this.document.body.classList.add(this.appConfig.colorTheme);
-            });
+        // this.appConfigService.config
+        //     .pipe(takeUntil(this.unsubscribeAll))
+        //     .subscribe((config) => {
+        //
+        //         this.appConfig = config;
+        //
+        //         if (this.appConfig.layout.width === 'boxed') {
+        //             this.document.body.classList.add('boxed');
+        //         } else {
+        //             this.document.body.classList.remove('boxed');
+        //         }
+        //
+        //         for (let i = 0; i < this.document.body.classList.length; i++) {
+        //             const className = this.document.body.classList[i];
+        //
+        //             if (className.startsWith('theme-')) {
+        //                 this.document.body.classList.remove(className);
+        //             }
+        //         }
+        //
+        //         this.document.body.classList.add(this.appConfig.colorTheme);
+        //     });
     }
 
     ngOnDestroy(): void {

@@ -183,7 +183,7 @@
       "projectType": "library",
       "root": "projects/security",
       "sourceRoot": "projects/security/src",
-      "prefix": "lib",
+      "prefix": "pdn",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -260,5 +260,8 @@
       }
     }
   },
-  "defaultProject": "Angular.Project.Template.Beta1"
+  "defaultProject": "Angular.Project.Template.Beta1",
+  "cli": {
+    "analytics": "69f15593-670a-46ea-8009-b6715d015b99"
+  }
 }
