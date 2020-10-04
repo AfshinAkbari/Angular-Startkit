@@ -25,8 +25,7 @@ import { PublicComponent } from './../public/public.component';
         RouterModule,
         CoreModule.forRoot(appConfig),
     ],
-    exports: [],
-  
+    exports: []
 })
 export class MainModule {
 }

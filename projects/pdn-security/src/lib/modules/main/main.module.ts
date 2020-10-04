@@ -9,7 +9,7 @@ import { CoreModule } from '../../shared/core.module';
 import { appConfig } from '../../models/config';
 import { MainComponent } from './main.component';
 import { LayoutModule } from '../layout/layout.module';
-//import { PdnCoreComponent } from 'pdn-core';
+// import { PdnCoreComponent } from 'pdn-core';
 
 const appRoutes: Routes = [
     // todo: loadChildren of main...
