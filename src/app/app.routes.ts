@@ -1,8 +1,8 @@
 
-import { PublicComponent } from '../../projects/security/src/lib/modules/public/public.component';
-import { PUBLIC_ROUTES } from '../../projects/security/src/lib/modules/public/public.routes';
-import { MainComponent } from '../../projects/security/src/lib/modules/main/main.component';
-import { MAIN_ROUTES } from '../../projects/security/src/lib/modules/main/main.routes';
+import { PublicComponent } from '../../projects/pdn-security/src/lib/modules/public/public.component';
+import { PUBLIC_ROUTES } from '../../projects/pdn-security/src/lib/modules/public/public.routes';
+import { MainComponent } from '../../projects/pdn-security/src/lib/modules/main/main.component';
+import { MAIN_ROUTES } from '../../projects/pdn-security/src/lib/modules/main/main.routes';
 import { Routes } from '@angular/router';
 
 export const APP_ROUTES: Routes  = [

@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { APP_ROUTES } from './app.routes';
 // import { AngularProjectModule } from 'projects/angular-project/src/public-api';
-import { SecurityModule } from 'security';
-// import { SecurityModule } from 'projects/security/src/public-api';
+import { PdnSecurityModule } from 'pdn-security';
+// import { PdnSecurityModule } from 'projects/pdn-security/src/public-api';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { SecurityModule } from 'security';
     BrowserModule,
     HttpClientModule,
     // AngularProjectModule,
-    SecurityModule,
+    PdnSecurityModule,
     RouterModule.forRoot(APP_ROUTES, {useHash: true})
   ],
   providers: [],
