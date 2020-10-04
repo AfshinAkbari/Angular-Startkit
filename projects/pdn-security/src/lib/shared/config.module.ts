@@ -1,17 +1,13 @@
-import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { APP_CONFIG } from './config.service';
 
 @NgModule()
-export class CoreModule {
-    constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
-        if (parentModule) {
-            throw new Error(':(');
-        }
-    }
+export class ConfigModule {
+    constructor(/*@Optional() @SkipSelf() parentModule: ConfigModule*/) {}
 
     static forRoot(config): ModuleWithProviders<any> {
         return {
-            ngModule: CoreModule,
+            ngModule: ConfigModule,
             providers: [
                 {
                     provide: APP_CONFIG,
