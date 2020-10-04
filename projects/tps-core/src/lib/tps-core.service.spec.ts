@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PdnCoreService } from './pdn-core.service';
+import { TpsCoreService } from './tps-core.service';
 
-describe('PdnCoreService', () => {
-  let service: PdnCoreService;
+describe('TpsCoreService', () => {
+  let service: TpsCoreService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(PdnCoreService);
+    service = TestBed.inject(TpsCoreService);
   });
 
   it('should be created', () => {

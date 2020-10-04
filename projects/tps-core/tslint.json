@@ -10,7 +10,7 @@
     "component-selector": [
       true,
       "element",
-      "pdn",
+      "tps",
       "kebab-case"
     ]
   }

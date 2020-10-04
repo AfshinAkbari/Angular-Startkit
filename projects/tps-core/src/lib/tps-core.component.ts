@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'pdn-core',
+  selector: 'tps-core',
   template: `
     <p>
       core works!
@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class PdnCoreComponent implements OnInit {
+export class TpsCoreComponent implements OnInit {
 
   constructor() { }
 

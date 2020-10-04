@@ -24,17 +24,17 @@
       "core-js/es6/*": [
         "node_modules/core-js/es/*"
       ],
-      "pdn-security": [
-        "projects/pdn-security/src/public-api"
+      "tps-security": [
+        "projects/tps-security/src/public-api"
       ],
-      "pdn-security/*": [
-        "projects/pdn-security/src/*"
+      "tps-security/*": [
+        "projects/tps-security/src/*"
       ],
-      "pdn-core": [
-        "projects/pdn-core/src/public-api"
+      "tps-core": [
+        "projects/tps-core/src/public-api"
       ],
-      "pdn-core/*": [
-        "projects/pdn-core/src/*"
+      "tps-core/*": [
+        "projects/tps-core/src/*"
       ]
     }
   }

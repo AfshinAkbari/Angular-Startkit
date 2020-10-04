@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'pdn-public-layout',
+    selector: 'tps-public-layout',
     templateUrl: './public.component.html',
     styleUrls: ['./public.component.scss']
 })

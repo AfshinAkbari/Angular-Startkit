@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/pdn-security",
+  "dest": "../../dist/tps-security",
   "assets": [],
   "lib": {
     "entryFile": "src/public-api.ts"
