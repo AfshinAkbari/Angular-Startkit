@@ -18,12 +18,6 @@
       "dom"
     ],
     "paths": {
-      "angular-project": [
-        "projects/angular-project/src/public-api"
-      ],
-      "angular-project/*": [
-        "projects/angular-project/src/*"
-      ],
       "core-js/es7/reflect": [
         "node_modules/core-js/proposals/reflect-metadata"
       ],
@@ -38,7 +32,6 @@
       ],
       "pdn-core": [
         "projects/pdn-core/src/public-api"
-
       ],
       "pdn-core/*": [
         "projects/pdn-core/src/*"
