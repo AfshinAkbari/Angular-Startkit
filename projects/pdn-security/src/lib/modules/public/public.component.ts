@@ -1,20 +1,14 @@
-import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
 @Component({
     selector: 'pdn-public-layout',
     templateUrl: './public.component.html',
     styleUrls: ['./public.component.scss']
 })
-export class PublicComponent implements OnInit, OnDestroy {
+export class PublicComponent {
 
 
-    constructor( ) {
-
-    }
-
-    ngOnInit(): void {
-    }
-
-    ngOnDestroy(): void {
+    constructor() {
 
     }
 }

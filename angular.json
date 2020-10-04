@@ -144,41 +144,6 @@
         }
       }
     },
-    "AngularProject": {
-      "root": "projects/angular-project",
-      "sourceRoot": "projects/angular-project/src",
-      "projectType": "library",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/angular-project/tsconfig.lib.json",
-            "project": "projects/angular-project/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/angular-project/src/test.ts",
-            "tsConfig": "projects/angular-project/tsconfig.spec.json",
-            "karmaConfig": "projects/angular-project/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/angular-project/tsconfig.lib.json",
-              "projects/angular-project/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
     "pdn-security": {
       "projectType": "library",
       "root": "projects/pdn-security",
