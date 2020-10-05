@@ -1,7 +1,8 @@
+@import '~@angular/material/theming';
 @import '~perfect-scrollbar/css/perfect-scrollbar';
-@import "app";
 @import "theme";
 @include mat-core();
+@import "breakpoints";
 @import "partials/helpers";
 @import "partials/colors";
 @import "partials/material";

@@ -63,6 +63,7 @@ $typography: mat-typography-config(
 
 @import "../../modules/layout/partials/side-panel/custom-side/custom-side.theme";
 @import "../../modules/layout/partials/toolbar/toolbar.theme";
+@import "../../modules/layout/partials/sidebar/sidebar.theme";
 
 //todo: import theme root file from other library (import index address)...
 
@@ -70,6 +71,7 @@ $typography: mat-typography-config(
 
     @include custom-side-theme($theme);
     @include toolbar-theme($theme);
+    @include app-sidebar-theme($theme);
 
     //todo: import theme root file from other library (import method reference)...
 
