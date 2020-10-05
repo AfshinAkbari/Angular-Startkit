@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { CoreDirectivesModule } from 'tps-core/lib/shared/directives/directives.module';
+import { CoreDirectivesModule } from 'tps-core';
 
 @NgModule({
     declarations: [],
