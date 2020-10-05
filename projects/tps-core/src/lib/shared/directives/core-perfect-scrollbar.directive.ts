@@ -5,7 +5,7 @@ import { fromEvent, Subject } from 'rxjs';
 import { debounceTime, filter, takeUntil } from 'rxjs/operators';
 import PerfectScrollbar from 'perfect-scrollbar';
 import * as _ from 'lodash';
-import { ConfigService } from 'tps-security/lib/shared/config.service';
+import { ConfigService } from 'tps-security';
 
 class CorePerfectScrollbarPosition {
     public x: number | 'start' | 'end';

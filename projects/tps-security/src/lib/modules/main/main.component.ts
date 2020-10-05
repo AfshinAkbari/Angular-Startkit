@@ -3,7 +3,7 @@ import { DOCUMENT } from '@angular/common';
 import { Platform } from '@angular/cdk/platform';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { ConfigService } from '../../shared/config.service';
+import { ConfigService } from 'tps-security';
 import { AppNavigationService } from '../layout/partials/navigation/navigation.service';
 import { navigation } from '../../models/navigation';
 

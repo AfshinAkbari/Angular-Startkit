@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@ang
 import { NavigationEnd, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { filter, take, takeUntil } from 'rxjs/operators';
-import { ConfigService } from '../../../../../shared/config.service';
+import { ConfigService } from 'tps-security';
 import { AppNavigationService } from '../../navigation/navigation.service';
 import { CorePerfectScrollbarDirective } from 'tps-core/lib/shared/directives/core-perfect-scrollbar.directive';
 import { SidebarService } from '../../sidebar/sidebar.service';
