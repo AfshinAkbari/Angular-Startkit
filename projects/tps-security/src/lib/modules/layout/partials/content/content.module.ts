@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AppSharedModule } from '../../../../shared/shared.module';
+import { SharedModule } from '../../../../shared/shared.module';
 import { ContentComponent } from './content.component';
 
 @NgModule({
@@ -9,7 +9,7 @@ import { ContentComponent } from './content.component';
     ],
     imports: [
         RouterModule,
-        AppSharedModule
+        SharedModule
     ],
     exports: [
         ContentComponent

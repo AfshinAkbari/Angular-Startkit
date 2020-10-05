@@ -17,5 +17,5 @@ import { AppPerfectScrollbarDirective } from './app-perfect-scrollbar.directive'
         AppPerfectScrollbarDirective
     ]
 })
-export class AppSharedModule {
+export class SharedModule {
 }

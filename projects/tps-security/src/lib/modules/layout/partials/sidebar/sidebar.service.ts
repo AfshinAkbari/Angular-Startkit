@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { AppSidebarComponent } from './sidebar.component';
+import { SidebarComponent } from './sidebar.component';
 
 @Injectable({
     providedIn: 'root'
 })
-export class AppSidebarService {
+export class SidebarService {
 
-    private registryObj: { [key: string]: AppSidebarComponent } = {};
+    private registryObj: { [key: string]: SidebarComponent } = {};
 
     constructor() {}
 
@@ -18,7 +18,7 @@ export class AppSidebarService {
         delete this.registryObj[key];
     }
 
-    getSidebar(key): AppSidebarComponent {
+    getSidebar(key): SidebarComponent {
         return this.registryObj[key];
     }
 }

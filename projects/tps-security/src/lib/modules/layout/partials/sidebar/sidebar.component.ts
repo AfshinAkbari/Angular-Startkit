@@ -16,9 +16,9 @@ import { animate, AnimationBuilder, AnimationPlayer, style } from '@angular/anim
 import { MediaObserver } from '@angular/flex-layout';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { AppSidebarService } from './sidebar.service';
-import { AppMatchMediaService } from './match-media.service';
-import { AppConfigService } from '../../../../shared/config.service';
+import { SidebarService } from './sidebar.service';
+import { MatchMediaService } from './match-media.service';
+import { ConfigService } from '../../../../shared/config.service';
 
 @Component({
     selector: 'app-sidebar',
@@ -26,7 +26,7 @@ import { AppConfigService } from '../../../../shared/config.service';
     styleUrls: ['./sidebar.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class AppSidebarComponent implements OnInit, OnDestroy {
+export class SidebarComponent implements OnInit, OnDestroy {
 
     @Input()
     name: string;
@@ -79,9 +79,9 @@ export class AppSidebarComponent implements OnInit, OnDestroy {
         private animationBuilder: AnimationBuilder,
         private changeDetectorRef: ChangeDetectorRef,
         private elementRef: ElementRef,
-        private appConfigService: AppConfigService,
-        private appMatchMediaService: AppMatchMediaService,
-        private appSidebarService: AppSidebarService,
+        private configService: ConfigService,
+        private matchMediaService: MatchMediaService,
+        private sidebarService: SidebarService,
         private mediaObserver: MediaObserver,
         private renderer: Renderer2
     ) {
@@ -147,12 +147,12 @@ export class AppSidebarComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
-        this.appConfigService.config
+        this.configService.config
             .pipe(takeUntil(this.unsubscribeAll))
             .subscribe((config) => {
                 this.appConfig = config;
             });
-        this.appSidebarService.register(this.name, this);
+        this.sidebarService.register(this.name, this);
         this.setupVisibility();
         this.setupPosition();
         this.setupLockedOpen();
@@ -163,7 +163,7 @@ export class AppSidebarComponent implements OnInit, OnDestroy {
         if (this.folded) {
             this.unfold();
         }
-        this.appSidebarService.unregister(this.name);
+        this.sidebarService.unregister(this.name);
         this.unsubscribeAll.next();
         this.unsubscribeAll.complete();
     }
@@ -188,7 +188,7 @@ export class AppSidebarComponent implements OnInit, OnDestroy {
         this.wasActive = false;
         this.wasFolded = this.folded;
         this.showSidebar();
-        this.appMatchMediaService.onMediaChange
+        this.matchMediaService.onMediaChange
             .pipe(takeUntil(this.unsubscribeAll))
             .subscribe(() => {
                 const isActive = this.mediaObserver.isActive(this.lockedOpen);

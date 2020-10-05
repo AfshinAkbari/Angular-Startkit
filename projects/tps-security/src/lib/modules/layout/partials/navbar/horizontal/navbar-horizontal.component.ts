@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
-import { AppConfigService } from '../../../../../shared/config.service';
+import { ConfigService } from '../../../../../shared/config.service';
 import { AppNavigationService } from '../../navigation/navigation.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class NavbarHorizontalComponent implements OnInit, OnDestroy {
     public navigation: any;
     private unsubscribeAll: Subject<any>;
 
-    constructor(private appConfigService: AppConfigService, private appNavigationService: AppNavigationService) {
+    constructor(private configService: ConfigService, private appNavigationService: AppNavigationService) {
         this.unsubscribeAll = new Subject();
     }
 
@@ -30,7 +30,7 @@ export class NavbarHorizontalComponent implements OnInit, OnDestroy {
                 this.navigation = this.appNavigationService.getCurrentNavigation();
             });
 
-        this.appConfigService.config
+        this.configService.config
             .pipe(takeUntil(this.unsubscribeAll))
             .subscribe((config) => {
                 this.appConfig = config;

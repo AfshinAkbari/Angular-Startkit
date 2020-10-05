@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { AppSidebarComponent } from './sidebar.component';
+import { SidebarComponent } from './sidebar.component';
 
 @NgModule({
     declarations: [
-        AppSidebarComponent
+        SidebarComponent
     ],
     exports: [
-        AppSidebarComponent
+        SidebarComponent
     ]
 })
 export class AppSidebarModule {

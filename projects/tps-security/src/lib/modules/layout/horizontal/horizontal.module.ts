@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { AppSharedModule } from '../../../shared/shared.module';
+import { SharedModule } from '../../../shared/shared.module';
 import { AppSidebarModule } from '../partials/sidebar/sidebar.module';
 import { CustomSideModule } from '../partials/side-panel/custom-side/custom-side.module';
 import { ContentModule } from '../partials/content/content.module';
@@ -16,7 +16,7 @@ import { HorizontalComponent } from './horizontal.component';
     ],
     imports: [
         MatSidenavModule,
-        AppSharedModule,
+        SharedModule,
         AppSidebarModule,
         ContentModule,
         FooterModule,

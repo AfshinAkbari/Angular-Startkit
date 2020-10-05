@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { AppNavigationModule } from '../../navigation/navigation.module';
-import { AppSharedModule } from '../../../../../shared/shared.module';
+import { SharedModule } from '../../../../../shared/shared.module';
 import { NavbarVerticalComponent } from './navbar-vertical.component';
 
 @NgModule({
@@ -12,7 +12,7 @@ import { NavbarVerticalComponent } from './navbar-vertical.component';
     imports: [
         MatButtonModule,
         MatIconModule,
-        AppSharedModule,
+        SharedModule,
         AppNavigationModule
     ],
     exports: [

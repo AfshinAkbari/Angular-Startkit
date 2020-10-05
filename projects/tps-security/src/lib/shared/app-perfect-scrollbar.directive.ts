@@ -5,7 +5,7 @@ import { fromEvent, Subject } from 'rxjs';
 import { debounceTime, filter, takeUntil } from 'rxjs/operators';
 import PerfectScrollbar from 'perfect-scrollbar';
 import * as _ from 'lodash';
-import { AppConfigService } from './config.service';
+import { ConfigService } from './config.service';
 
 class AppPerfectScrollbarPosition {
     public x: number | 'start' | 'end';
@@ -34,7 +34,7 @@ export class AppPerfectScrollbarDirective implements OnInit, AfterViewInit, OnDe
 
     constructor(
         public elementRef: ElementRef,
-        private appConfigService: AppConfigService,
+        private configService: ConfigService,
         private platform: Platform,
         private router: Router
     ) {
@@ -96,7 +96,7 @@ export class AppPerfectScrollbarDirective implements OnInit, AfterViewInit, OnDe
     }
 
     ngAfterViewInit(): void {
-        this.appConfigService.config
+        this.configService.config
             .pipe(takeUntil(this.unsubscribeAll))
             .subscribe(
                 (settings) => {

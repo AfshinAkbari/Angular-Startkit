@@ -3,7 +3,7 @@ import { DOCUMENT } from '@angular/common';
 import { Platform } from '@angular/cdk/platform';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { AppConfigService } from '../../shared/config.service';
+import { ConfigService } from '../../shared/config.service';
 import { AppNavigationService } from '../layout/partials/navigation/navigation.service';
 import { navigation } from '../../models/navigation';
 
@@ -20,7 +20,7 @@ export class MainComponent implements OnInit, OnDestroy {
 
     constructor(
         @Inject(DOCUMENT) private document: any,
-        private appConfigService: AppConfigService,
+        private configService: ConfigService,
         private appNavigationService: AppNavigationService,
         private platform: Platform
     ) {
@@ -34,7 +34,7 @@ export class MainComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
-        this.appConfigService.config
+        this.configService.config
             .pipe(takeUntil(this.unsubscribeAll))
             .subscribe((config) => {
 

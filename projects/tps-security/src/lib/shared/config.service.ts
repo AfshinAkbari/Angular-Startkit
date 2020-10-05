@@ -10,7 +10,7 @@ export const APP_CONFIG = new InjectionToken('appCustomConfig');
 @Injectable({
     providedIn: 'root'
 })
-export class AppConfigService {
+export class ConfigService {
 
     private configSubject: BehaviorSubject<any>;
     private readonly defaultConfig: any;

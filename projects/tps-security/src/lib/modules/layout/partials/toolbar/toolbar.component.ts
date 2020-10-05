@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { AppConfigService } from '../../../../shared/config.service';
-import { AppSidebarService } from '../sidebar/sidebar.service';
+import { ConfigService } from '../../../../shared/config.service';
+import { SidebarService } from '../sidebar/sidebar.service';
 
 @Component({
     selector: 'toolbar',
@@ -17,12 +17,12 @@ export class ToolbarComponent implements OnInit, OnDestroy {
     public appConfig: any;
     private unsubscribeAll: Subject<any>;
 
-    constructor(private appConfigService: AppConfigService, private appSidebarService: AppSidebarService) {
+    constructor(private configService: ConfigService, private sidebarService: SidebarService) {
         this.unsubscribeAll = new Subject();
     }
 
     ngOnInit(): void {
-        this.appConfigService.config
+        this.configService.config
             .pipe(takeUntil(this.unsubscribeAll))
             .subscribe((settings) => {
                 this.appConfig = settings;
@@ -37,7 +37,7 @@ export class ToolbarComponent implements OnInit, OnDestroy {
     }
 
     toggleSidebarOpen(key): void {
-        this.appSidebarService.getSidebar(key).toggleOpen();
+        this.sidebarService.getSidebar(key).toggleOpen();
     }
 
 }

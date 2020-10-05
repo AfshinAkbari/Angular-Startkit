@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { AppSidebarService } from '../../sidebar/sidebar.service';
+import { SidebarService } from '../../sidebar/sidebar.service';
 
 @Component({
     selector: 'custom-side',
@@ -14,13 +14,13 @@ export class CustomSideComponent implements OnInit, OnDestroy {
     public sidebarFolded: boolean;
     private unsubscribeAll: Subject<any>;
 
-    constructor(private appSidebarService: AppSidebarService) {
+    constructor(private sidebarService: SidebarService) {
         this.sidebarFolded = true;
         this.unsubscribeAll = new Subject();
     }
 
     ngOnInit(): void {
-        this.appSidebarService.getSidebar('customSide').foldedChanged
+        this.sidebarService.getSidebar('customSide').foldedChanged
             .pipe(takeUntil(this.unsubscribeAll))
             .subscribe((folded) => {
                 this.sidebarFolded = folded;
@@ -33,14 +33,14 @@ export class CustomSideComponent implements OnInit, OnDestroy {
     }
 
     foldSidebarTemporarily(): void {
-        this.appSidebarService.getSidebar('customSide').foldTemporarily();
+        this.sidebarService.getSidebar('customSide').foldTemporarily();
     }
 
     unfoldSidebarTemporarily(): void {
-        this.appSidebarService.getSidebar('customSide').unfoldTemporarily();
+        this.sidebarService.getSidebar('customSide').unfoldTemporarily();
     }
 
     toggleSidebarOpen(): void {
-        this.appSidebarService.getSidebar('customSide').toggleOpen();
+        this.sidebarService.getSidebar('customSide').toggleOpen();
     }
 }

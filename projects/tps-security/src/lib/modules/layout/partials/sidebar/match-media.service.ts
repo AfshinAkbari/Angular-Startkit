@@ -6,7 +6,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 @Injectable({
     providedIn: 'root'
 })
-export class AppMatchMediaService {
+export class MatchMediaService {
 
     public activeMediaQuery = '';
     public onMediaChange: BehaviorSubject<string> = new BehaviorSubject<string>('');

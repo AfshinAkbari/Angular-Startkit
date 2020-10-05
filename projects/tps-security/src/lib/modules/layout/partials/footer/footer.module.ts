@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { AppSharedModule } from '../../../../shared/shared.module';
+import { SharedModule } from '../../../../shared/shared.module';
 import { FooterComponent } from './footer.component';
 
 @NgModule({
@@ -11,7 +11,7 @@ import { FooterComponent } from './footer.component';
     imports: [
         RouterModule,
         MatToolbarModule,
-        AppSharedModule
+        SharedModule
     ],
     exports: [
         FooterComponent

@@ -2,10 +2,10 @@ import { Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@ang
 import { NavigationEnd, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { filter, take, takeUntil } from 'rxjs/operators';
-import { AppConfigService } from '../../../../../shared/config.service';
+import { ConfigService } from '../../../../../shared/config.service';
 import { AppNavigationService } from '../../navigation/navigation.service';
 import { AppPerfectScrollbarDirective } from '../../../../../shared/app-perfect-scrollbar.directive';
-import { AppSidebarService } from '../../sidebar/sidebar.service';
+import { SidebarService } from '../../sidebar/sidebar.service';
 
 @Component({
     selector: 'navbar-vertical',
@@ -21,9 +21,9 @@ export class NavbarVerticalComponent implements OnInit, OnDestroy {
     private unsubscribeAll: Subject<any>;
 
     constructor(
-        private appConfigService: AppConfigService,
+        private configService: ConfigService,
         private appNavigationService: AppNavigationService,
-        private appSidebarService: AppSidebarService,
+        private sidebarService: SidebarService,
         private router: Router
     ) {
         this.unsubscribeAll = new Subject();
@@ -56,13 +56,13 @@ export class NavbarVerticalComponent implements OnInit, OnDestroy {
                 takeUntil(this.unsubscribeAll)
             )
             .subscribe(() => {
-                    if (this.appSidebarService.getSidebar('navbar')) {
-                        this.appSidebarService.getSidebar('navbar').close();
+                    if (this.sidebarService.getSidebar('navbar')) {
+                        this.sidebarService.getSidebar('navbar').close();
                     }
                 }
             );
 
-        this.appConfigService.config
+        this.configService.config
             .pipe(takeUntil(this.unsubscribeAll))
             .subscribe((config) => {
                 this.appConfig = config;
@@ -84,10 +84,10 @@ export class NavbarVerticalComponent implements OnInit, OnDestroy {
     }
 
     toggleSidebarOpened(): void {
-        this.appSidebarService.getSidebar('navbar').toggleOpen();
+        this.sidebarService.getSidebar('navbar').toggleOpen();
     }
 
     toggleSidebarFolded(): void {
-        this.appSidebarService.getSidebar('navbar').toggleFold();
+        this.sidebarService.getSidebar('navbar').toggleFold();
     }
 }

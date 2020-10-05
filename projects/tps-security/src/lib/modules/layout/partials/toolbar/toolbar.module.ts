@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { AppSharedModule } from '../../../../shared/shared.module';
+import { SharedModule } from '../../../../shared/shared.module';
 import { ToolbarComponent } from './toolbar.component';
 
 @NgModule({
@@ -17,8 +17,7 @@ import { ToolbarComponent } from './toolbar.component';
         MatIconModule,
         MatMenuModule,
         MatToolbarModule,
-
-        AppSharedModule
+        SharedModule
     ],
     exports: [
         ToolbarComponent
