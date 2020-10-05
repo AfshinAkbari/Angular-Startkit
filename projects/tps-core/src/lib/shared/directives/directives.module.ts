@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core';
+import {CorePerfectScrollbarDirective} from './core-perfect-scrollbar.directive';
 
 @NgModule({
-    declarations: [],
+    declarations: [
+        CorePerfectScrollbarDirective
+    ],
     imports: [],
-    exports: []
+    exports: [
+        CorePerfectScrollbarDirective
+    ]
 })
 
 export class CoreDirectivesModule {

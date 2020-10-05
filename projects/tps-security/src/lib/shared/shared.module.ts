@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { AppPerfectScrollbarDirective } from './app-perfect-scrollbar.directive';
+import { CoreDirectivesModule } from 'tps-core/lib/shared/directives/directives.module';
 
 @NgModule({
-    declarations: [
-        AppPerfectScrollbarDirective,
-    ],
+    declarations: [],
     imports: [
         CommonModule,
         FlexLayoutModule,
+        CoreDirectivesModule,
     ],
     exports: [
         CommonModule,
         FlexLayoutModule,
-        AppPerfectScrollbarDirective
+        CoreDirectivesModule
     ]
 })
 export class SharedModule {

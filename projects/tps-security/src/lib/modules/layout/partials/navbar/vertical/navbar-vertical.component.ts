@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 import { filter, take, takeUntil } from 'rxjs/operators';
 import { ConfigService } from '../../../../../shared/config.service';
 import { AppNavigationService } from '../../navigation/navigation.service';
-import { AppPerfectScrollbarDirective } from '../../../../../shared/app-perfect-scrollbar.directive';
+import { CorePerfectScrollbarDirective } from 'tps-core/lib/shared/directives/core-perfect-scrollbar.directive';
 import { SidebarService } from '../../sidebar/sidebar.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class NavbarVerticalComponent implements OnInit, OnDestroy {
 
     public appConfig: any;
     public navigation: any;
-    private appPerfectScrollbar: AppPerfectScrollbarDirective;
+    private corePerfectScrollbar: CorePerfectScrollbarDirective;
     private unsubscribeAll: Subject<any>;
 
     constructor(
@@ -29,13 +29,13 @@ export class NavbarVerticalComponent implements OnInit, OnDestroy {
         this.unsubscribeAll = new Subject();
     }
 
-    @ViewChild(AppPerfectScrollbarDirective, {static: true})
-    set directive(theDirective: AppPerfectScrollbarDirective) {
+    @ViewChild(CorePerfectScrollbarDirective, {static: true})
+    set directive(theDirective: CorePerfectScrollbarDirective) {
         if (!theDirective) {
             return;
         }
 
-        this.appPerfectScrollbar = theDirective;
+        this.corePerfectScrollbar = theDirective;
         this.router.events
             .pipe(
                 filter((event) => event instanceof NavigationEnd),
@@ -43,7 +43,7 @@ export class NavbarVerticalComponent implements OnInit, OnDestroy {
             )
             .subscribe(() => {
                     setTimeout(() => {
-                        this.appPerfectScrollbar.scrollToElement('navbar .nav-link.active', -120);
+                        this.corePerfectScrollbar.scrollToElement('navbar .nav-link.active', -120);
                     });
                 }
             );

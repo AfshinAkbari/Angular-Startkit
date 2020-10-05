@@ -5,9 +5,9 @@ import { fromEvent, Subject } from 'rxjs';
 import { debounceTime, filter, takeUntil } from 'rxjs/operators';
 import PerfectScrollbar from 'perfect-scrollbar';
 import * as _ from 'lodash';
-import { ConfigService } from './config.service';
+import { ConfigService } from 'tps-security/lib/shared/config.service';
 
-class AppPerfectScrollbarPosition {
+class CorePerfectScrollbarPosition {
     public x: number | 'start' | 'end';
     public y: number | 'start' | 'end';
 
@@ -18,9 +18,9 @@ class AppPerfectScrollbarPosition {
 }
 
 @Directive({
-    selector: '[appPerfectScrollbar]'
+    selector: '[corePerfectScrollbar]'
 })
-export class AppPerfectScrollbarDirective implements OnInit, AfterViewInit, OnDestroy {
+export class CorePerfectScrollbarDirective implements OnInit, AfterViewInit, OnDestroy {
 
     public isInitialized: boolean;
     public isMobile: boolean;
@@ -50,7 +50,7 @@ export class AppPerfectScrollbarDirective implements OnInit, AfterViewInit, OnDe
     }
 
     @Input()
-    set appPerfectScrollbarOptions(value) {
+    set corePerfectScrollbarOptions(value) {
         this.options = _.merge({}, this.options, value);
         setTimeout(() => {
             this._destroy();
@@ -60,11 +60,11 @@ export class AppPerfectScrollbarDirective implements OnInit, AfterViewInit, OnDe
         });
     }
 
-    get appPerfectScrollbarOptions(): any {
+    get corePerfectScrollbarOptions(): any {
         return this.options;
     }
 
-    @Input('appPerfectScrollbar')
+    @Input('corePerfectScrollbar')
     set enabled(value: boolean | '') {
         if (value === '') {
             value = true;
@@ -104,7 +104,7 @@ export class AppPerfectScrollbarDirective implements OnInit, AfterViewInit, OnDe
                 }
             );
 
-        if (this.appPerfectScrollbarOptions.updateOnRouteChange) {
+        if (this.corePerfectScrollbarOptions.updateOnRouteChange) {
             this.router.events
                 .pipe(
                     takeUntil(this.unsubscribeAll),
@@ -140,7 +140,7 @@ export class AppPerfectScrollbarDirective implements OnInit, AfterViewInit, OnDe
 
         this.isInitialized = true;
         this.ps = new PerfectScrollbar(this.elementRef.nativeElement, {
-            ...this.appPerfectScrollbarOptions
+            ...this.corePerfectScrollbarOptions
         });
         this.ps.event.eventElements.forEach((eventElement) => {
             if (typeof eventElement.handlers['keydown'] !== 'undefined') {
@@ -178,14 +178,14 @@ export class AppPerfectScrollbarDirective implements OnInit, AfterViewInit, OnDe
         this.ps.update();
     }
 
-    position(absolute: boolean = false): AppPerfectScrollbarPosition {
+    position(absolute: boolean = false): CorePerfectScrollbarPosition {
         if (!absolute && this.ps) {
-            return new AppPerfectScrollbarPosition(
+            return new CorePerfectScrollbarPosition(
                 this.ps.reach.x || 0,
                 this.ps.reach.y || 0
             );
         } else {
-            return new AppPerfectScrollbarPosition(
+            return new CorePerfectScrollbarPosition(
                 this.elementRef.nativeElement.scrollLeft,
                 this.elementRef.nativeElement.scrollTop
             );
