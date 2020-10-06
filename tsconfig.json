@@ -36,6 +36,18 @@
       "tps-core/*": [
         "dist/tps-core/*"
       ]
+//      "tps-security": [
+//        "projects/tps-security/src/public-api"
+//      ],
+//      "tps-security/*": [
+//        "projects/tps-security/src/*"
+//      ],
+//      "tps-core": [
+//        "projects/tps-core/src/public-api"
+//      ],
+//      "tps-core/*": [
+//        "projects/tps-core/src/*"
+//      ]
     }
   }
 }
