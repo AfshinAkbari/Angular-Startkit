@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
-import { ConfigService } from 'tps-security';
+import { ConfigService } from 'tps-core';
 import { AppNavigationService } from '../../navigation/navigation.service';
 
 @Component({

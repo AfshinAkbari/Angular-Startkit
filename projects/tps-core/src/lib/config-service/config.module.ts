@@ -1,5 +1,5 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { APP_CONFIG } from 'tps-security';
+import { APP_CONFIG } from './config.service';
 
 @NgModule()
 export class ConfigModule {

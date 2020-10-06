@@ -6,10 +6,13 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { appRoutes } from './app.routes';
+import { ConfigModule } from 'tps-core';
+import { appConfig } from './models/appConfig';
+
 // import { TpsSecurityModule } from 'tps-security';
 // import { TpsSecurityModule } from 'projects/tps-security/src/public-api';
-import { MainModule } from 'projects/tps-security/src/public-api';
-import { PublicModule } from 'projects/tps-security/src/public-api';
+import { MainModule } from 'tps-security';
+import { PublicModule } from 'tps-security';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,7 @@ import { PublicModule } from 'projects/tps-security/src/public-api';
     HttpClientModule,
     MainModule,
     PublicModule,
+    ConfigModule.forRoot(appConfig),
     // TpsSecurityModule,
     RouterModule.forRoot(appRoutes, {useHash: true})
   ],

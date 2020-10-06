@@ -25,16 +25,16 @@
         "node_modules/core-js/es/*"
       ],
       "tps-security": [
-        "projects/tps-security/src/public-api"
+        "dist/tps-security"
       ],
       "tps-security/*": [
-        "projects/tps-security/src/*"
+        "dist/tps-security/*"
       ],
       "tps-core": [
-        "projects/tps-core/src/public-api"
+        "dist/tps-core/tps-core",
       ],
       "tps-core/*": [
-        "projects/tps-core/src/*"
+        "dist/tps-core/*"
       ]
     }
   }
